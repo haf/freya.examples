@@ -1,24 +1,28 @@
 ﻿module StaticFileServer.Program
 
 open Freya.Core
-open Microsoft.Owin.Hosting
+open Suave.Logging
+open Suave.Web
+open Suave.Types
+open Suave.Owin
 
 // App
 
 let app =
     Stage5.files
 
-// Katana
+// Suave
 
-type FileServer () =
-    member __.Configuration () =
-        OwinAppFunc.ofFreya app
+let config =
+    { defaultConfig with
+        bindings = [ HttpBinding.mk' HTTP "0.0.0.0" 7000 ]
+        logger = Loggers.saneDefaultsFor LogLevel.Verbose }
 
 // Main
 
 [<EntryPoint>]
-let main _ = 
-    let _ = WebApp.Start<FileServer> ("http://localhost:7000")
+let main _ =
     printfn "Listening on port 7000 and looking in %s" Prelude.root.FullName
-    let _ = System.Console.ReadLine ()
+    let owin = OwinApp.ofAppFunc "/" (OwinAppFunc.ofFreya app)
+    startWebServer config owin
     0
