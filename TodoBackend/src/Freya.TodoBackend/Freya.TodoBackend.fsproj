@@ -1,11 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>ed55fed2-832f-4f52-99ec-4eb7781aa4c4</ProjectGuid>
+    <ProjectGuid>{ED55FED2-832F-4F52-99EC-4EB7781AA4C4}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <RootNamespace>Freya.TodoBackend</RootNamespace>
     <AssemblyName>Freya.TodoBackend</AssemblyName>
@@ -16,7 +15,6 @@
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <Tailcalls>false</Tailcalls>
     <OutputPath>bin\Debug\</OutputPath>
@@ -36,6 +34,7 @@
     <PlatformTarget>AnyCPU</PlatformTarget>
     <DocumentationFile>bin\Release\Freya.TodoBackend.XML</DocumentationFile>
     <Prefer32Bit>true</Prefer32Bit>
+    <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
   <PropertyGroup>
     <MinimumVisualStudioVersion Condition="'$(MinimumVisualStudioVersion)' == ''">11</MinimumVisualStudioVersion>
@@ -62,111 +61,76 @@
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="Aether">
-      <HintPath>..\..\packages\Aether.7.0.1\lib\net35\Aether.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Arachne.Core">
-      <HintPath>..\..\packages\Arachne.Core.2.3.25\lib\net45\Arachne.Core.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Arachne.Http">
-      <HintPath>..\..\packages\Arachne.Http.2.3.25\lib\net45\Arachne.Http.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Arachne.Http.Cors">
-      <HintPath>..\..\packages\Arachne.Http.Cors.2.3.25\lib\net45\Arachne.Http.Cors.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Arachne.Language">
-      <HintPath>..\..\packages\Arachne.Language.2.3.25\lib\net45\Arachne.Language.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Arachne.Uri">
-      <HintPath>..\..\packages\Arachne.Uri.2.3.25\lib\net45\Arachne.Uri.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Arachne.Uri.Template">
-      <HintPath>..\..\packages\Arachne.Uri.Template.2.3.25\lib\net45\Arachne.Uri.Template.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="Chiron">
       <HintPath>..\..\packages\Chiron.5.2.1\lib\net45\Chiron.dll</HintPath>
-      <Private>True</Private>
     </Reference>
     <Reference Include="FParsec">
       <HintPath>..\..\packages\FParsec.1.0.2\lib\net40-client\FParsec.dll</HintPath>
-      <Private>True</Private>
     </Reference>
     <Reference Include="FParsecCS">
       <HintPath>..\..\packages\FParsec.1.0.2\lib\net40-client\FParsecCS.dll</HintPath>
-      <Private>True</Private>
     </Reference>
-    <Reference Include="Freya.Core">
-      <HintPath>..\..\packages\Freya.Core.2.0.199\lib\net45\Freya.Core.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Freya.Lenses.Http">
-      <HintPath>..\..\packages\Freya.Lenses.Http.2.0.199\lib\net45\Freya.Lenses.Http.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Freya.Lenses.Http.Cors">
-      <HintPath>..\..\packages\Freya.Lenses.Http.Cors.2.0.199\lib\net45\Freya.Lenses.Http.Cors.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Freya.Machine">
-      <HintPath>..\..\packages\Freya.Machine.2.0.199\lib\net45\Freya.Machine.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Freya.Machine.Extensions.Http">
-      <HintPath>..\..\packages\Freya.Machine.Extensions.Http.2.0.199\lib\net45\Freya.Machine.Extensions.Http.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Freya.Machine.Extensions.Http.Cors">
-      <HintPath>..\..\packages\Freya.Machine.Extensions.Http.Cors.2.0.199\lib\net45\Freya.Machine.Extensions.Http.Cors.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Freya.Machine.Router">
-      <HintPath>..\..\packages\Freya.Machine.Router.2.0.199\lib\net45\Freya.Machine.Router.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Freya.Recorder">
-      <HintPath>..\..\packages\Freya.Recorder.2.0.199\lib\net45\Freya.Recorder.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Freya.Router">
-      <HintPath>..\..\packages\Freya.Router.2.0.199\lib\net45\Freya.Router.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="FSharp.Core, Version=4.3.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
     <Reference Include="Hekate">
       <HintPath>..\..\packages\Hekate.1.0.1\lib\net40\Hekate.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Microsoft.Owin">
-      <HintPath>..\..\packages\Microsoft.Owin.3.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Microsoft.Owin.Diagnostics">
-      <HintPath>..\..\packages\Microsoft.Owin.Diagnostics.3.0.1\lib\net45\Microsoft.Owin.Diagnostics.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Microsoft.Owin.Host.HttpListener">
-      <HintPath>..\..\packages\Microsoft.Owin.Host.HttpListener.3.0.1\lib\net45\Microsoft.Owin.Host.HttpListener.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Microsoft.Owin.Hosting">
-      <HintPath>..\..\packages\Microsoft.Owin.Hosting.3.0.1\lib\net45\Microsoft.Owin.Hosting.dll</HintPath>
-      <Private>True</Private>
     </Reference>
     <Reference Include="mscorlib" />
-    <Reference Include="Owin">
-      <HintPath>..\..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Numerics" />
+    <Reference Include="Suave">
+      <HintPath>..\..\packages\Suave.0.33.0\lib\net40\Suave.dll</HintPath>
+    </Reference>
+    <Reference Include="FSharp.Core">
+      <HintPath>..\..\packages\FSharp.Core.4.0.0.1\lib\net40\FSharp.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Freya.Core">
+      <HintPath>..\..\packages\Freya.Core.2.0.200\lib\net45\Freya.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Freya.Lenses.Http">
+      <HintPath>..\..\packages\Freya.Lenses.Http.2.0.200\lib\net45\Freya.Lenses.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="Freya.Lenses.Http.Cors">
+      <HintPath>..\..\packages\Freya.Lenses.Http.Cors.2.0.200\lib\net45\Freya.Lenses.Http.Cors.dll</HintPath>
+    </Reference>
+    <Reference Include="Freya.Recorder">
+      <HintPath>..\..\packages\Freya.Recorder.2.0.200\lib\net45\Freya.Recorder.dll</HintPath>
+    </Reference>
+    <Reference Include="Freya.Machine">
+      <HintPath>..\..\packages\Freya.Machine.2.0.200\lib\net45\Freya.Machine.dll</HintPath>
+    </Reference>
+    <Reference Include="Freya.Machine.Extensions.Http">
+      <HintPath>..\..\packages\Freya.Machine.Extensions.Http.2.0.200\lib\net45\Freya.Machine.Extensions.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="Freya.Machine.Extensions.Http.Cors">
+      <HintPath>..\..\packages\Freya.Machine.Extensions.Http.Cors.2.0.200\lib\net45\Freya.Machine.Extensions.Http.Cors.dll</HintPath>
+    </Reference>
+    <Reference Include="Freya.Router">
+      <HintPath>..\..\packages\Freya.Router.2.0.200\lib\net45\Freya.Router.dll</HintPath>
+    </Reference>
+    <Reference Include="Freya.Machine.Router">
+      <HintPath>..\..\packages\Freya.Machine.Router.2.0.200\lib\net45\Freya.Machine.Router.dll</HintPath>
+    </Reference>
+    <Reference Include="Arachne.Core">
+      <HintPath>..\..\packages\Arachne.Core.2.3.26\lib\net45\Arachne.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Arachne.Uri">
+      <HintPath>..\..\packages\Arachne.Uri.2.3.26\lib\net45\Arachne.Uri.dll</HintPath>
+    </Reference>
+    <Reference Include="Arachne.Uri.Template">
+      <HintPath>..\..\packages\Arachne.Uri.Template.2.3.26\lib\net45\Arachne.Uri.Template.dll</HintPath>
+    </Reference>
+    <Reference Include="Arachne.Language">
+      <HintPath>..\..\packages\Arachne.Language.2.3.26\lib\net45\Arachne.Language.dll</HintPath>
+    </Reference>
+    <Reference Include="Arachne.Http">
+      <HintPath>..\..\packages\Arachne.Http.2.3.26\lib\net45\Arachne.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="Arachne.Http.Cors">
+      <HintPath>..\..\packages\Arachne.Http.Cors.2.3.26\lib\net45\Arachne.Http.Cors.dll</HintPath>
+    </Reference>
+    <Reference Include="Aether">
+      <HintPath>..\..\packages\Aether.7.0.2\lib\net35\Aether.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
