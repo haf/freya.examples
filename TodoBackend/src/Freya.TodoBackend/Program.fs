@@ -21,29 +21,23 @@
 module Freya.TodoBackend.Program
 
 open Freya.Core
-open Microsoft.Owin.Hosting
+open Suave.Logging
+open Suave.Web
+open Suave.Types
+open Suave.Owin
 
-(* Katana
+// Suave
 
-   Katana (Owin Self Hosting) expects us to expose a type with a specific
-   method. Freya lets us do see easily, the OwinAppFunc module providing
-   functions to turn any Freya<'a> function in to a suitable value for
-   OWIN compatible hosts such as Katana. *)
-
-type TodoBackend () =
-    member __.Configuration () =
-        OwinAppFunc.ofFreya (Api.todoRoutes)
-
-(* Main
-
-   A very simple program, simply a console app, with a blocking read from
-   the console to keep our server from shutting down immediately. Though
-   we are self hosting here as a console application, the same application
-   should be easily transferrable to any OWIN compatible server, including
-   IIS. *)
-
+let config =
+    { defaultConfig with
+        bindings = [ HttpBinding.mk' HTTP "0.0.0.0" 7000 ]
+        logger = Loggers.saneDefaultsFor LogLevel.Verbose }
+ 
+ // Main
+ 
 [<EntryPoint>]
-let main _ = 
-    let _ = WebApp.Start<TodoBackend> ("http://localhost:7000")
-    let _ = System.Console.ReadLine ()
+let main _ =
+    printfn "Listening on port 7000"
+    let owin = OwinApp.ofAppFunc "/" (OwinAppFunc.ofFreya Freya.TodoBackend.Api.api)
+    startWebServer config owin
     0
